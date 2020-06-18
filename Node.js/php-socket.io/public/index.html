@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	<title>Sockets</title>
+	<link rel="stylesheet" type="text/css" href="">
+</head>
+<body>
+	<link rel="stylesheet" href="css/estilo.css">
+
+	<h3>Ingresar:</h3>
+	<form accept-charset="utf-8" id="login_form">
+		<input type="text" name="correo" id="correo" placeholder="Correo" value="">
+		<input type="text" name="usuario" id="usuario" placeholder="Usuario" value="">
+		<input type="button" name="boton" value="entrar" onclick="ingresar()">
+	</form>
+	
+	<div id="inicio_sesion"></div>
+	<hr>
+	<br><br>
+
+	<div id="cont_mensajes">
+		
+	</div>
+	<br>
+	<div id="caja_mensaje">
+		<textarea id="mensaje" placeholder="mensaje"></textarea>
+		<input type="text" id="receptor" name="receptor" placeholder="destinatario">
+		<button type="" id="enviar_mensaje" onclick="enviar_mensaje()" value="Enviar">
+			Enviar
+		</button>
+	</div>
+
+	
+
+	<hr>
+	<h1>Socket.io</h1>
+	<script src="jquery-3.5.1.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="funciones_sockets.js"></script>
+	<script>
+		function ingresar(){
+			correo = $('#login_form #correo').val();
+			usuario = $('#login_form #usuario').val();
+			loguear(correo, usuario);
+			$('#inicio_sesion').append('<p id="inicio_sesion">Has iniciado sesion correctamente.</p>');
+		}
+		function enviar_mensaje(){
+			mensaje = $('#mensaje').val();
+			destinatario = $('#receptor').val();
+			if (destinatario != '') {
+				enviar_mens(usuario, mensaje, destinatario);
+			}else {
+				enviar_mens(usuario, mensaje);
+			}
+		}
+	</script>
+</body>
+</html>

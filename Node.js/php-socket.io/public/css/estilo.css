@@ -1,0 +1,20 @@
+#cont_mensajes{
+			width: 50%; background: #A1D6DE; border: solid 2px black
+		}
+		#txt{
+			background: white; padding: 5px; border: solid 1px black; margin: 10px; border-radius: 5px;
+		}
+
+		#inicio_sesion{
+			color: blue;
+		}
+
+		#enviar_mensaje{
+			height: 100%; background: blue; color: white; padding: 10px;
+		}
+		#mensaje{
+			width: auto;
+		}
+		#caja_mensaje{
+			display: flex; justify-content: flex-start; align-items: center;
+		}
